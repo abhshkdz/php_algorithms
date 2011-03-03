@@ -38,13 +38,3 @@ function division($dividend, $divisor) {
 
 	return $quotient;
 }
-
-
-$in = fopen('php://stdin', 'r');
-while (($dividend = (int)fgets($in))) {
-	$divisor = (int)fgets($in);
-	$division = division($dividend,$divisor);
-	//validates correctness
-	assert($division == floor($dividend/$divisor));
-	echo $division	. "\n";
-}
