@@ -34,14 +34,14 @@ class Node {
  * Use BFS to traverse the tree printing every level with an end-of-line after each one
  */
 function printByLevel(Node $n) {
-	$queue = array();
-	array_push($queue, $n);
+	$queue = new SPLQueue();
+	$queue->enqueue($n);
 	$currentLevel = 0;
 	$n->level = $currentLevel;
 	$root = $n;
 
-	while (!empty($queue)) {
-		$item = array_shift($queue);
+	while (!$queue->isEmpty()) {
+		$item = $queue->dequeue();
 
 		if ($item->level != $currentLevel) {
 			echo "\n";
@@ -53,11 +53,11 @@ function printByLevel(Node $n) {
 		$childLevel = $currentLevel + 1;
 		if ($item->left) {
 			$item->left->level = $childLevel;
-			array_push($queue, $item->left);
+			$queue->enqueue($item->left);
 		}
 		if ($item->right) {
 			$item->right->level = $childLevel;
-			array_push($queue, $item->right);
+			$queue->enqueue($item->right);
 		}
 	}
 }
