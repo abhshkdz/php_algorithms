@@ -1,6 +1,8 @@
 <?php
 /**
  * Implementation of quick sort algorithm
+ * O(n lgn)
+ *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
 
