@@ -9,6 +9,7 @@
 
 /**
  * Checks every possible sum, O(n^2)
+ * With constant space, O(1) 
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
 function sum_exists0(array $nums, $s) {
@@ -22,7 +23,7 @@ function sum_exists0(array $nums, $s) {
 
 /**
  * Sorts before checking, It's O(n lg n) due to the sorting, 
- * the search itself is O(n)
+ * the search itself is O(n), it uses constant space (O(1))
  *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
@@ -49,3 +50,19 @@ function sum_exists1(array $nums, $s) {
 	return false;
 }
 
+/**
+ * Uses a hashmap to store and verify if the missing terms for a sum 
+ * exists while iterating through the array. O(n) in time and O(n) in space for the hashmap
+ *
+ * @author Felipe Ribeiro <felipernb@gmail.com>
+ */
+function sum_exists2(array $nums, $s) {
+	$missingTermForSum = array();
+
+	foreach ($nums as $n) {
+		if (isset($missingTermForSum[$n]))
+			return true;
+		$missingTermForSum[$s - $n] = true; //value doesn't matter
+	}
+	return false;
+}
