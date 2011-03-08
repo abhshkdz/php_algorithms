@@ -34,7 +34,8 @@ function sum_exists1(array $nums, $s) {
 	
 	while ($i < $j) {
 		$actualSum = $nums[$i] + $nums[$j];
-		if ($actualSum == $s) return true;
+		if ($actualSum == $s) 
+			return true;
 		
 		/* As the array is sorted, the element 
 		 * on position n+1 is bigger than the one on position n
