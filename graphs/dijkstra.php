@@ -55,7 +55,7 @@ function dijkstra(array $graph, $initialVertex) {
 }
 
 $graph = array( 
-	'a' => array('b'=>0.7, 'c'=>'2'),
+	'a' => array('b'=>0.7, 'c'=>2),
 	'b' => array('c'=> 0.5),
 	'c' => array('a'=> 0.2, 'b' => 1)
 );
