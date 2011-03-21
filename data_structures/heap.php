@@ -69,7 +69,7 @@ class MaxHeap extends Heap {
 	}
 
 	/**
-	 * @see Heap::insert
+	 * @see Heap::siftDown
 	 */
 	protected function siftDown() {
 		for ($i = 1; ($c = $i * 2) <= $this->n; $i = $c) {
