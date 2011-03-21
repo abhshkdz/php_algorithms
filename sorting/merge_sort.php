@@ -8,14 +8,17 @@
  *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
-function mergesort(array $a) {
+function mergesort(array &$a) {
 	if (count($a) == 1) return $a;
 	$middle = (int) count($a)/2;
 
-	$left = mergesort(array_slice($a,0,$middle));
-	$right = mergesort(array_slice($a,$middle));
+	$left = array_slice($a, 0, $middle);
+	$right = array_slice($a,$middle);
 
-	return merge($left, $right);
+	mergesort($left);
+	mergesort($right);
+
+	$a = merge($left, $right);
 }
 
 /**
