@@ -3,8 +3,12 @@
 define('INFINITY', PHP_INT_MAX);
 
 /**
+ * Question: You are given an array with integers (both positive and negative) 
+ * in any random order. 
+ * Find the sub-array with the largest sum.
+ *
  * Implementation of Kadane's Algorithm to determine the 
- * subarray with maximum sum
+ * subarray with maximum sum in O(n) with constant space (O(1))
  *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
