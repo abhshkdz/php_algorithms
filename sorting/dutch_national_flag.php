@@ -12,9 +12,10 @@
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
 
-define('RED', 0);
-define('WHITE', 1);
-define('BLUE', 2);
+//Defining strings as contants
+define('RED', 'RED');
+define('WHITE', 'WHITE');
+define('BLUE', 'BLUE');
 
 
 function dutch_flag(array $colors) {
@@ -50,4 +51,4 @@ function swap(&$array, $i, $j) {
 	$array[$j] = $tmp;
 }
 
-print_r(dutch_flag(array(0,1,1,2,0,1,0,2,2,1,0,1)));
+print_r(dutch_flag(array(RED, WHITE, WHITE, BLUE, RED, WHITE, RED, BLUE, BLUE, WHITE, RED, BLUE)));
