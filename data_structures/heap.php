@@ -26,7 +26,7 @@ abstract class Heap {
 	}
 
 	/**
-	 * Extract the maximum value of the heap
+	 * Extract the top value of the heap
 	 *
 	 * @author Felipe Ribeiro <felipernb@gmail.com>
 	 */
