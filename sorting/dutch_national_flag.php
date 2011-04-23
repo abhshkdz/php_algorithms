@@ -5,9 +5,7 @@
  * three colors : Red, White and Blue. Given balls of these three colors arranged
  * randomly in a line (the actual number of balls does not matter), the task is
  * to arrange them such that all balls of same color are together and their
- * collective color groups are in the correct order. The costs of examining the
- * color of a ball and moving a ball are so high that each ball can sustain at
- * most one examination and one movement.
+ * collective color groups are in the correct order in O(n) and just one pass.
  *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
