@@ -60,4 +60,4 @@ $graph = array(
 	'c' => array('a'=> 0.2, 'b' => 1)
 );
 
-dijkstra($graph, 'a');
+var_dump(dijkstra($graph, 'a'));
