@@ -34,10 +34,8 @@ function dijkstra(array $graph, $initialVertex) {
 	$distance[$initialVertex] = 0;
 	
 	$nonOptimizedVertices = new MinPriorityQueue();
-	foreach(array_keys($graph) as $v) {
-		$nonOptimizedVertices->insert($v, $distance[$v]);
-	}
-
+	$nonOptimizedVertices->insert($initialVertex, $distance[$initialVertex]);
+	
 	while(!$nonOptimizedVertices->isEmpty()) {
 		$u = $nonOptimizedVertices->extract();
 		if ($distance[$u] == INFINITY) {
@@ -47,6 +45,7 @@ function dijkstra(array $graph, $initialVertex) {
 			$newDistance = $distance[$u] + $edgeWeight;
 			if ($newDistance < $distance[$neighbor]) {
 				$distance[$neighbor] = $newDistance;
+				$nonOptimizedVertices->insert($neighbor,$distance[$neighbor]); 
 			}
 		}
 
@@ -55,9 +54,11 @@ function dijkstra(array $graph, $initialVertex) {
 }
 
 $graph = array( 
-	'a' => array('b'=>0.7, 'c'=>2),
-	'b' => array('c'=> 0.5),
-	'c' => array('a'=> 0.2, 'b' => 1)
+	's' => array('u'=>10, 'x'=>5),
+	'u' => array('x'=>2, 'v'=>1),
+	'x' => array('u'=>3, 'v'=>9, 'y'=>2),
+	'v' => array('y'=>4),
+	'y' => array('s'=>7, 'v'=>6),
 );
 
-var_dump(dijkstra($graph, 'a'));
+var_dump(dijkstra($graph, 's'));
