@@ -1,8 +1,8 @@
 <?php
-class a {
-	public static $c = 0;
-}
 /**
+ * Implementation of the QuickSelect algorithm to return the kth smallest 
+ * element of an array. (k starts on 0)
+ *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
 function kth_smallest_element($list, $k, $lowerLimit = 0, $upperLimit = -1) {
@@ -15,7 +15,6 @@ function kth_smallest_element($list, $k, $lowerLimit = 0, $upperLimit = -1) {
 			swap($list, $i, $dividerPosition);
 			$dividerPosition++;
 		} 
-		a::$c++;
 	}
 	swap($list, $dividerPosition, $upperLimit);
 	if ($dividerPosition > $k) {
@@ -33,17 +32,3 @@ function swap(&$array, $i, $j) {
 	$array[$j] = $tmp;
 }
 
-assert(kth_smallest_element(array(4,1,10,50,3), 1) == 3);
-echo a::$c."\n";
-a::$c=0;
-assert(kth_smallest_element(array(4,1,10,50,3), 2) == 4);
-echo a::$c."\n";
-a::$c=0;
-assert(kth_smallest_element(array(4,1,10,50,3), 0) == 1);
-echo a::$c."\n";
-a::$c=0;
-assert(kth_smallest_element(array(4,1,10,50,3), 4) == 50);
-echo a::$c."\n";
-a::$c=0;
-assert(kth_smallest_element(array(4,1,10,50,3), 3) == 10);
-echo a::$c."\n";
