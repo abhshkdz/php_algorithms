@@ -16,11 +16,18 @@ function my_sqrt($n) {
 		$square = $x * $x;
 		if ($square < $n) $lowerBound = $x;
 		else $upperBound = $x;
-	} while ($square < $n - DELTA || $square > $n + DELTA);
+	} while (abs($square - $n) > DELTA);
+
+	// In case of perfect squares
+	$roundedX = round($x);
+	if ($roundedX * $roundedX == $n) {
+		$x = $roundedX;
+	}
 
 	return $x;
 }
 
+var_dump(my_sqrt(2));
 var_dump(my_sqrt(4));
 var_dump(my_sqrt(9));
 var_dump(my_sqrt(16));
