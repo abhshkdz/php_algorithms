@@ -27,7 +27,9 @@ function division($dividend, $divisor) {
 	}
 
 	$quotient = 1;
-
+	
+	/* Double the quotient while divisor * quotient is less than or equal to half 
+	 of the dividend */
 	while ($divisor*$quotient <= $dividend >> 1) {
 		$quotient = $quotient << 1;
 	}

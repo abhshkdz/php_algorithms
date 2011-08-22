@@ -20,13 +20,21 @@ function max_subarray_sum(array $a) {
 	$currentStartIndex = 0;
 	
 	for ($currentEndIndex = 0, $aLength = count($a); $currentEndIndex < $aLength; $currentEndIndex++) {
+		
 		$currentMaxSum += $a[$currentEndIndex];
+		/* If adding the current element makes the sum bigger than previous stored value
+		 * set the max_sum_subarray start index as the start index of the current sequence
+		 * and the end index as the current one 
+		 */
 		if ($currentMaxSum > $maxSum) {
 			$maxSum = $currentMaxSum;
 			$maxStartIndex = $currentStartIndex;
 			$maxEndIndex = $currentEndIndex;
 		}
-
+		
+		/* If the current max sum is lower than 0, consider the empty sub-array as the highest one
+		 * with 0 and try to restart a new sequence
+		 */
 		if ($currentMaxSum < 0) {
 			$currentMaxSum = 0;
 			$currentStartIndex = $currentEndIndex + 1;
