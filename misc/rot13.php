@@ -12,6 +12,8 @@
  * other N is that it is self-inverse, so the same code can be used for 
  * encoding and decoding. 
  *
+ * UPDATE: I've just found out that this algorithm is already implemented natively in
+ * PHP with the function str_rot13
  *
  * @author Felipe Ribeiro <felipernb@gmail.com>
  */
