@@ -12,6 +12,11 @@
 		 	return (gcd($n,($m%$n)));
 		}
 	}
+	function lcm($m,$n) 
+	{ 
+		return (($m/gcd($m,$n))*$n); 
+	}
 	$gcd = gcd($a,$b);
-	echo "The GCD of $a and $b is: $gcd";
+	$lcm = lcm($a,$b);
+	echo "GCD($a,$b)=$gcd and LCM($a,$b)=$lcm";
 ?>
